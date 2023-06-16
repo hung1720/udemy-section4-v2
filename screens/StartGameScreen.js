@@ -1,12 +1,12 @@
 import { TextInput, View, StyleSheet, Alert } from "react-native";
-import PrimaryButton from "../components/PrimaryButton";
+import PrimaryButton from "../components/ui/PrimaryButton";
 import { useState } from "react";
 import Colors from '../constants/colors'
 
-function StartGameScreen({onPickNumber}) {
-    const [enteredNumber, setEnteredNumber] = useState('')
+function StartGameScreen({onPickNumber}) { 
+    const [enteredNumber, setEnteredNumber] = useState('') // biến mà người dùng nhập vào
 
-    function numberInputHandler(enteredText) {
+    function numberInputHandler(enteredText) { 
         setEnteredNumber(enteredText)
     }
 
@@ -35,8 +35,8 @@ function StartGameScreen({onPickNumber}) {
                 keyboardType="number-pad"
                 autoCapitalize="none"
                 autoCorrect={false}
-                onChangeText={numberInputHandler}
-                value={enteredNumber}
+                onChangeText={numberInputHandler} // gọi numberInputHandler để mỗi khi người dùng nhập vào lại set giá trị 
+                value={enteredNumber} // Giá trị mà người dùng nhập vào
             />
             <View style={styles.buttonsContainer}>
                 <View style={styles.buttonContainer}>
